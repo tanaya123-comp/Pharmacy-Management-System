@@ -1,0 +1,14 @@
+{%  extends 'managemet/adminmain2.html' %}
+
+
+{% block content %}
+
+    <ul class="list-group">
+        {% for i in customers %}
+        <li class="list-group-item">
+            <a href="{% url 'viewcustprofile' i.id %}">{{i.name}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

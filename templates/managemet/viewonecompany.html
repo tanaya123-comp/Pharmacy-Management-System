@@ -1,0 +1,13 @@
+{%  extends 'managemet/adminmain2.html' %}
+
+
+{% block content %}
+    <div style="margin-left:300px">
+        <h4>Company Name:{{company.name}}</h4>
+        <p>License No:{{company.license_no}}</p>
+        <p>Address:{{company.address}}</p>
+        <p>Contact No:{{company.contact_no}}</p>
+        <p>Email:{{company.email}}</p>
+        <button type="button" class="btn btn-outline-danger"><a href="{% url 'deletecompany' company.id %}">Remove Company?</a></button>
+    </div>
+{% endblock %}

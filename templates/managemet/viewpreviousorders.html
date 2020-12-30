@@ -1,0 +1,63 @@
+{%  extends 'managemet/main.html' %}
+
+
+{% block content %}
+
+<div id="items">
+    <ul class="list-group">
+       {% for i in allorders %}
+        <li>
+             <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{i.medicine.name}}
+                          Ordered On:{{i.date_created}}
+                <span class="badge badge-primary badge-pill">STATUS:{{i.status}} </span>
+                <span class="badge badge-primary badge-pill">Total Price: {{i.quantity}} X {{i.peritem}} =  {{i.totalprice}} </span>
+
+        </li>
+
+        {% endfor %}
+
+
+    </ul>
+
+</div>
+
+
+<!--<ul>-->
+<!--        {% for i in allorders %}-->
+<!--        <li>-->
+<!--             <h3>Ordered On:{{i.date_created}}</h3>-->
+<!--            <h2>{{i.medicine.name}}</h2>-->
+
+<!--            <h3>Total Price: {{i.quantity}} X {{i.peritem}} =  {{i.totalprice}}</h3>-->
+
+<!--        </li>-->
+
+<!--        {% endfor %}-->
+<!--    </ul>-->
+
+
+
+{% endblock %}
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>View Previous Orders</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <ul>-->
+<!--        {% for i in allorders %}-->
+<!--        <li>-->
+<!--            <h2>{{i.medicine.name}}</h2>-->
+<!--            <h3>Ordered On:{{i.date_created}}</h3>-->
+<!--            <h3>Total Price: {{i.quantity}} X {{i.peritem}} =  {{i.totalprice}}</h3>-->
+
+<!--        </li>-->
+
+<!--        {% endfor %}-->
+<!--    </ul>-->
+
+<!--</body>-->
+<!--</html>-->

@@ -1,0 +1,48 @@
+{%  extends 'managemet/main.html' %}
+
+
+{% block content %}
+
+
+<ul class="list-group">
+    {% for i in order %}
+  <h3>Your Orders Are On the Way!!!</h3>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    {{i.medicine.name}}
+
+    <span class="badge badge-primary badge-pill">{{i.quantity}}x{{i.peritem}}={{i.totalprice}}</span>
+
+      <button type="button" class="btn btn-outline-success"><a href="{% url 'orderrec' i.id %}">Received</a></button>
+  </li>
+{% endfor %}
+</ul>
+
+
+
+{% endblock %}
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Main Page</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h3>Welcome {{name}}</h3>-->
+<!--    <a href="{% url 'logoutpage' %}">Logout</a>-->
+<!--    <br/>-->
+<!--    <br/>-->
+<!--    <a href="{% url 'orderpage' custid  %}">Order Medicine</a>-->
+<!--    <br/>-->
+<!--    <br/>-->
+<!--    <a href="{% url 'viewprofile' custid %}">View Profile</a>-->
+<!--    <br/>-->
+<!--    <br/>-->
+<!--    <a href="{% url 'viewpreviousorders' custid %}">View Previous Orders</a>-->
+
+
+<!--</body>-->
+<!--</html>-->
+
+
+

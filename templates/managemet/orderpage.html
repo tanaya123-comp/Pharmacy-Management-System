@@ -1,0 +1,210 @@
+{%  extends 'managemet/main.html' %}
+
+{% block content %}
+<br>
+<br>
+<br>
+	<div style="padding-left:500px">
+		<form>
+
+        {{myfilter.form}}
+
+      <button class="btn btn-outline-info" type="submit">Search</button>
+		<h6>*The Medicines which required prescription need to be physically bought by customer by showing prescription(ordered disabled) *</h6>
+    	</form>
+	</div>
+
+
+        <div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Name</th>
+
+				</tr>
+				{% for i in med%}
+					<tr>
+                        <td ><span id="n{{i.id}}">{{i.name}}</span></td>
+						<td>
+							{% if i.prescribe_req %}
+							<label style="font-weight:bold">Prescription required</label>
+							{% endif %}
+            				<label>Add number of packets(minimum 1 packet 6 items)</label>
+							<label id="i{{i.id}}">Rs.<span id="p{{i.id}}">{{i.price_per_item}}</span></label>
+                			<input id="ib{{i.id}}" class="quantity" type="number" name="quantity"/>
+						</td>
+
+
+
+                        <td><button id="{{i.id}}" class="btn btn-outline-warning cart">Add To Cart</button></td>
+						<td><button id="r{{i.id}}" class="btn btn-outline-danger cart2">Remove </button></td>
+					</tr>
+				{% endfor %}
+			</table>
+			<br/>
+			<br/>
+			<br/>
+			<button class="btn btn-outline-success"><a href="{% url 'billpage'  %}">Order Now</a></button>
+		</div>
+	</div>
+</div>
+
+
+
+
+{% endblock %}
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Order</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <form>-->
+
+<!--        {{myfilter.form}}-->
+
+<!--        <button>Search</button>-->
+<!--    </form>-->
+
+<!--        <div class="row">-->
+<!--	<div class="col-md">-->
+<!--		<div class="card card-body">-->
+<!--			<table class="table table-sm">-->
+<!--				<tr>-->
+<!--					<th>Name</th>-->
+
+<!--				</tr>-->
+<!--				{% for i in med%}-->
+<!--					<tr>-->
+<!--                        <td ><span id="n{{i.id}}">{{i.name}}</span></td>-->
+<!--						<td>-->
+<!--            				<label>Add number of packets(minimum 1 packet 6 items)</label>-->
+<!--							<label>Rs.<span id="p{{i.id}}">{{i.price_per_item}}</span></label>-->
+<!--                			<input id="ib{{i.id}}" class="quantity" type="number" name="quantity"/>-->
+<!--						</td>-->
+
+
+
+<!--                        <td><button id="{{i.id}}" class="cart">Add To Cart</button></td>-->
+<!--					</tr>-->
+<!--				{% endfor %}-->
+<!--			</table>-->
+<!--			<br/>-->
+<!--			<br/>-->
+<!--			<br/>-->
+<!--			<button><a href="{% url 'billpage'  %}">Order Now</a></button>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</div>-->
+
+
+<!--</body>-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--<script>-->
+
+<!--	console.log("working");-->
+<!--	if(localStorage.getItem('cart') == null)-->
+<!--	{-->
+<!--	var cart={};-->
+<!--	}-->
+<!--	else-->
+<!--	{-->
+<!--	 cart=JSON.parse(localStorage.getItem('cart'));-->
+<!--	}-->
+<!--	$('.cart').click(function(){-->
+<!--			console.log('clicked');-->
+<!--			var idstr=this.id.toString();-->
+<!--			quantity=document.getElementById('ib'+idstr).value;-->
+<!--			name=document.getElementById('n'+idstr).innerHTML;-->
+<!--			price=document.getElementById('p'+idstr).innerHTML;-->
+<!--			console.log(name);-->
+<!--			console.log(quantity);-->
+<!--			console.log(price);-->
+<!--			cart[idstr]=[name,quantity,price];-->
+<!--			console.log(cart);-->
+<!--			localStorage.setItem('cart',JSON.stringify(cart));-->
+<!--	});-->
+
+<!--</script>-->
+
+<!--</html>-->
+
+{% block jscontent %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<script>
+
+	console.log("working");
+	if(localStorage.getItem('cart') == null)
+	{
+	var cart={};
+	}
+	else
+	{
+	 cart=JSON.parse(localStorage.getItem('cart'));
+	}
+	$('.cart').click(function(){
+			console.log('clicked');
+			var idstr=this.id.toString();
+			quantity=document.getElementById('ib'+idstr).value;
+			name=document.getElementById('n'+idstr).innerHTML;
+			price=document.getElementById('p'+idstr).innerHTML;
+			console.log(name);
+			console.log(quantity);
+			console.log(price);
+			cart[idstr]=[name,quantity,price];
+			console.log(cart);
+			localStorage.setItem('cart',JSON.stringify(cart));
+	});
+
+	$('.cart2').click(function(){
+
+		console.log("remove clicked");
+
+		var idstr=this.id.toString();
+
+		var result=idstr.substring(1);
+
+		var temp={};
+
+		for(let i in cart){
+			if(i!=result)
+			{
+				temp[i]=cart[i];
+			}
+
+		}
+
+		console.log(temp);
+
+		cart={};
+
+
+
+		for(let i in temp){
+			if(i!=result)
+			{
+				cart[i]=temp[i];
+			}
+
+		}
+
+		console.log(cart);
+
+
+		localStorage.setItem('cart',JSON.stringify(cart));
+
+		document.getElementById('ib'+result).value="";
+
+
+	});
+
+
+
+</script>
+
+
+        {% endblock %}
+

@@ -1,0 +1,49 @@
+{%  extends 'managemet/adminmain2.html' %}
+
+
+{% block content %}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Batch No</th>
+      <th scope="col">Mfg Date</th>
+      <th scope="col">Expiry Date</th>
+        <th scope="col">Price Per Item</th>
+      <th scope="col">Available Quantity</th>
+      <th scope="col">Order Packets</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in medicines %}
+    <tr>
+      <td>{{i.name}}</td>
+      <td>{{i.batch_no}}</td>
+      <td>{{i.mfg_date}}</td>
+      <td>{{i.expire_date}}</td>
+        <td>{{i.price_per_item}}</td>
+      <td>{{i.quantity}}</td>
+      <td><button type="submit" style="width:100px" class="btn btn-outline-dark"><a href="{% url 'orderstock' i.id %}">+</a></button></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+
+
+
+{% endblock %}
+
+{% block jscontent %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<script>
+
+
+
+
+
+</script>
+
+
+        {% endblock %}

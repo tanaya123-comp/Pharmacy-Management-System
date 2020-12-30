@@ -1,0 +1,42 @@
+{%  extends 'managemet/adminmain2.html' %}
+
+
+{% block content %}
+
+<h3>Today' Orders!!!</h3>
+<ul class="list-group">
+    {% for i in order %}
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    {{i.medicine.name}}
+
+    <span class="badge badge-primary badge-pill">{{i.quantity}}x{{i.peritem}}={{i.totalprice}}</span>
+
+      <button type="button" class="btn btn-outline-success"><a href="{% url 'updatestatus' i.id %}">Deliver</a></button>
+  </li>
+ {% endfor %}
+</ul>
+
+
+
+{% endblock %}
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>DashBoard</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <a href="{% url 'logoutpage' %}">Logout</a>-->
+<!--    <br/>-->
+<!--    <a href="{% url 'viewcustomer' %}">View Customers</a>-->
+<!--     <br/>-->
+<!--    <a href="{% url 'viewcompany' %}">View Company</a>-->
+<!--     <br/>-->
+<!--    <a href="{% url 'viewmedicines' %}">View Medicines</a>-->
+<!--     <br/>-->
+
+<!--</body>-->
+<!--</html>-->

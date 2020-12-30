@@ -1,0 +1,29 @@
+{%  extends 'managemet/adminmain2.html' %}
+
+
+{% block content %}
+
+
+<div id="items">
+    <ul class="list-group">
+       {% for i in order %}
+        <li>
+             <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{i.medicine.name}}
+                          Ordered On:{{i.date_created}}
+
+                <span class="badge badge-primary badge-pill">Total Price: {{i.quantity}} X {{i.peritem}} =  {{i.totalprice}} </span>
+
+        </li>
+
+        {% endfor %}
+
+
+    </ul>
+
+</div>
+
+
+
+
+{% endblock %}

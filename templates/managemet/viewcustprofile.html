@@ -1,0 +1,23 @@
+{%  extends 'managemet/adminmain2.html' %}
+
+
+{% block content %}
+    <div style="margin-left:300px">
+        <h4>Name:{{name}}</h4>
+    <br/>
+    <br/>
+    <h6>Phone:{{phone}}</h6>
+    <br/>
+    <br/>
+    <h6>Address:{{address}}</h6>
+    <br/>
+    <br/>
+    <h6>Email:{{email}}</h6>
+    <br/>
+        <button type="button" class="btn btn-outline-primary"> <a href="{% url 'vieworderofcust' id %}">ViewOrders</a></button>
+<button type="button" class="btn btn-outline-danger"><a href="{% url 'deletecustomer' id %}">DeleteCustomer</a></button>
+
+
+    </div>
+
+{% endblock %}
