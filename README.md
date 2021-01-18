@@ -7,7 +7,9 @@ Pharmacy about it's delivery.
 
 
 
+![](images/login2.png)
 
+![](images/register.png)
 
 
 
