@@ -4,10 +4,10 @@ This is a Pharmacy Management System where a customer can register and order med
 Pharmacy about it's delivery.
 
 
-![](images/register.png)
 
 
-![](images/Login.png)
+
+
 
 
 
