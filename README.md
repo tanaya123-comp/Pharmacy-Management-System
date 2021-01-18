@@ -4,11 +4,39 @@ This is a Pharmacy Management System where a customer can register and order med
 Pharmacy about it's delivery.
 
 
+![](images/register.png)
+
+
+![](images/Login.png)
+
+
+
+
+
 
 
 
 The Pharmacy can also keep a track of the stock of medicines and order them accordingly.
 It can also keep track of the companies that supply medicines view their details and order stock of medcinies.
+
+
+![](images/five.png)
+
+
+![](images/four.png)
+
+![](images/one.png)
+
+
+![](images/seven.png)
+
+
+![](images/six.png)
+
+![](images/three.png)
+
+
+![](images/two.png)
 
 
 
