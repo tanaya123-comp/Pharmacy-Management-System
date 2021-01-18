@@ -28,11 +28,11 @@ It can also keep track of the companies that supply medicines view their details
 ![](images/five.png)
 
 
-## Order Page
+## Place Order 
 ![](images/four.png)
 
 
-## View Company
+## Order Page
 ![](images/one.png)
 
 
@@ -44,7 +44,7 @@ It can also keep track of the companies that supply medicines view their details
 
 ![](images/three.png)
 
-
+## Profile Page
 ![](images/two.png)
 
 
