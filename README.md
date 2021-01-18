@@ -36,11 +36,12 @@ It can also keep track of the companies that supply medicines view their details
 ![](images/one.png)
 
 
-## Order Stock
+## View Company
 ![](images/seven.png)
 
 
 ![](images/six.png)
+
 
 ![](images/three.png)
 
