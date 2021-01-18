@@ -6,9 +6,11 @@ Pharmacy about it's delivery.
 
 
 
-
+# Login Page
 ![](images/login2.png)
 
+
+# Register Page
 ![](images/register.png)
 
 
@@ -22,14 +24,19 @@ The Pharmacy can also keep a track of the stock of medicines and order them acco
 It can also keep track of the companies that supply medicines view their details and order stock of medcinies.
 
 
+## Dashboard
 ![](images/five.png)
 
 
+## Order Page
 ![](images/four.png)
 
+
+## View Company
 ![](images/one.png)
 
 
+## Order Stock
 ![](images/seven.png)
 
 
